@@ -17,6 +17,7 @@ channels = 1
 freq = 44100
 sd.default.samplerate = freq
 sd.default.channels = channels
+# duration_limit is assign max time of recording # 
 duration_limit = 10
 
 if not(os.path.exists(path)):
@@ -39,7 +40,7 @@ while os.path.exists(path):
 
             if type(duration) == int:
 
-                while duration <= 0 or duration >= 11:
+                while duration <= 0 or duration > duration_limit:
 
                     print(f"please give a integer value between 1-{duration_limit}: ")
                     duration = int_or_str(input(f"record time (max {duration_limit} sec): "))
