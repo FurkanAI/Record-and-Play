@@ -17,7 +17,7 @@ channels = 1
 freq = 44100
 sd.default.samplerate = freq
 sd.default.channels = channels
-# duration_limit is assign max time of recording # 
+# duration_limit assign max time of recording # 
 duration_limit = 10
 
 if not(os.path.exists(path)):
