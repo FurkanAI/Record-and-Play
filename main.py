@@ -17,7 +17,7 @@ channels = 1
 freq = 44100
 sd.default.samplerate = freq
 sd.default.channels = channels
-
+duration_limit = 10
 
 if not(os.path.exists(path)):
     print("path does not exist")
@@ -28,21 +28,21 @@ while os.path.exists(path):
 
     if select == "r":
 
-        duration = int_or_str((input("record time (max 10 sec): ")))
+        duration = int_or_str((input(f"record time (max {duration_limit} sec): ")))
 
         while True:
 
             if type(duration) != int:
 
                 print("please give a integer value")
-                duration = int_or_str(input("record time (max 10 sec): "))
+                duration = int_or_str(input(f"record time (max {duration_limit} sec): "))
 
             if type(duration) == int:
 
                 while duration <= 0 or duration >= 11:
 
-                    print("please give a integer value between 1-10: ")
-                    duration = int_or_str(input("record time (max 10 sec): "))
+                    print(f"please give a integer value between 1-{duration_limit}: ")
+                    duration = int_or_str(input(f"record time (max {duration_limit} sec): "))
 
                     if type(duration) != int:
                         break
