@@ -7,4 +7,4 @@ It should be also created a folder and assigned path of the folder to path varia
 
 # Running
 Recorded soundfiles are saved the folder which was created. They are also played from the folder
-If you want to change time limit in record, You should change duration_limit variable
+If you want to change time limit in record, You should change duration_limit variable. Default value is 10 second.
